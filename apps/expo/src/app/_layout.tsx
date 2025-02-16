@@ -1,5 +1,10 @@
+import { TRPCProvider } from "@/utils/api";
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <TRPCProvider>
+      <Stack />
+    </TRPCProvider>
+  );
 }
