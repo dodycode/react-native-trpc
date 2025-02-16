@@ -1,0 +1,24 @@
+{
+  "name": "react-native-trpc",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev:api": "turbo watch dev -F @react-native-trpc/api",
+    "dev:rn": "turbo watch dev -F @react-native-trpc/expo",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo run clean"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.0",
+    "turbo": "^2.4.2",
+    "typescript": "5.7.3"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "version": "1.0.0"
+}

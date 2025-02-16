@@ -1,0 +1,32 @@
+{
+  "name": "@react-native-trpc/api",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "esbuild --bundle --outfile=./dist/index.js --platform=node --target=node20 ./src/index.ts",
+    "deploy": "run-s build zip update",
+    "update": "aws lambda update-function-code --zip-file fileb://lambda.zip --function-name hello",
+    "zip": "zip -j lambda.zip dist/index.js",
+    "dev": "pnpm dlx sst dev",
+    "clean": "rm -rf node_modules .turbo dist build"
+  },
+  "devDependencies": {
+    "@react-native-trpc/tsconfig": "workspace:*",
+    "@types/aws-lambda": "8.10.147",
+    "esbuild": "^0.21.4",
+    "npm-run-all2": "^6.2.0"
+  },
+  "dependencies": {
+    "@hono/trpc-server": "^0.3.4",
+    "@trpc/server": "^10.45.2",
+    "hono": "^4.7.1",
+    "sst": "3.9.2",
+    "superjson": "^2.2.2",
+    "zod": "^3.24.2"
+  }
+}

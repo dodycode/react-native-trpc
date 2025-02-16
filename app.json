@@ -1,0 +1,8 @@
+{
+  "android": {
+    "package": "com.dodycode.reactnativetrpc"
+  },
+  "ios": {
+    "bundleIdentifier": "com.dodycode.reactnativetrpc"
+  }
+}
