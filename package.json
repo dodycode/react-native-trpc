@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev:api": "turbo watch dev -F @react-native-trpc/api",
-    "dev:rn": "turbo watch dev -F @react-native-trpc/expo",
+    "dev:api": "pnpm -F @react-native-trpc/api dev",
+    "dev:android": "pnpm -F @react-native-trpc/expo android",
+    "dev:ios": "pnpm -F @react-native-trpc/expo ios",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",

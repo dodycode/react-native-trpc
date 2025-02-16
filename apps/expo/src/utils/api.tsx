@@ -32,6 +32,7 @@ export function TRPCProvider(props: { children: React.ReactNode }) {
           colorMode: "ansi",
         }),
         httpBatchLink({
+          transformer: superjson,
           url: `${getBaseUrl()}/trpc`,
           headers() {
             const headers = new Map<string, string>();
@@ -44,7 +45,6 @@ export function TRPCProvider(props: { children: React.ReactNode }) {
           },
         }),
       ],
-      transformer: superjson,
     })
   );
 

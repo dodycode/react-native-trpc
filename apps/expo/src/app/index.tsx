@@ -1,6 +1,9 @@
+import { api } from "@/utils/api";
 import { Text, View } from "react-native";
 
 export default function Index() {
+  const { data } = api.post.hello.useQuery();
+
   return (
     <View
       style={{
@@ -9,7 +12,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>{data?.message}</Text>
     </View>
   );
 }

@@ -2,6 +2,10 @@ import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const postRouter = createTRPCRouter({
   hello: publicProcedure.query(() => {
-    return "Hello from TRPC!";
+    console.log("test");
+
+    return {
+      message: "Hello from TRPC!"
+    }
   }),
 });
